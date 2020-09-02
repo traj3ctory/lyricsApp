@@ -36,7 +36,7 @@ class Search extends Component {
                                     onChange={this.onChange}
                                     />
                                 </Form.Group>
-                                <Button variant="primary" type="submit" size="sm">
+                                <Button variant="primary" type="submit" className="btn-sm mb-3 mx-auto">
                                     Submit
                                 </Button>
                             </Form>
