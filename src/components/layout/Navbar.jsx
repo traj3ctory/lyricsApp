@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="mb-5 shadow">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="mb-3 shadow">
             <Navbar.Brand href="#home" className="navbar-brand mb-0 h1 mx-auto">LyricsFinder</Navbar.Brand>
             {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
