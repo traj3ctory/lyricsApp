@@ -5,6 +5,7 @@ import Header from './components/layout/Navbar';
 import Index from './components/layout/Index';
 import Lyrics from './components/tracks/Lyrics';
 import { Container, } from 'react-bootstrap';
+import HeaderImg from "./components/layout/header";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <>
         <Header />
+        <HeaderImg />
         <Container>
           <Switch>
             <Route exact path="/" component={Index} />

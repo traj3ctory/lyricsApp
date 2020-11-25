@@ -19,6 +19,8 @@ class Lyrics extends Component {
                 this.setState({ lyrics: res.data.message.body.lyrics });
                 return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`)
             })
+            // .then(res => {
+            //     console.log( res.data.message.body.track);
             .then(res => {
                 this.setState({ track: res.data.message.body.track });
             })
@@ -29,7 +31,7 @@ class Lyrics extends Component {
         const { track, lyrics } = this.state;
         return (track === undefined || lyrics === undefined || Object.keys(track).length === 0 || Object.keys(lyrics).length === 0) ? <Spinner />
             : <>
-                <Link to="/" className="btn btn-dark btn-sm mb-4">
+                <Link to="/" className="btn btn-info btn-sm mb-4">
                     <i className="fa fa-chevron-left"></i>&nbsp;Go back
                 </Link>
                 <Card>
@@ -42,7 +44,7 @@ class Lyrics extends Component {
                             <strong>Album ID</strong>: {track.album_id}
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <strong>Song Genre</strong>: {track.primary_genres.music_genre_list[0].music_genre.music_genre_name}
+                            <strong>Song Genre</strong>: {(track.primary_genres.music_genre_list === []) ? track.primary_genres.music_genre_list[0].music_genre.music_genre_name : '---'}
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <strong>Explicit Word</strong>: {track.explicit === 0 ? 'No' : 'Yes'}

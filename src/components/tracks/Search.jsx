@@ -35,7 +35,7 @@ class Search extends Component {
                 {value => {
                     const { dispatch } = value;
                     return (
-                        <Card className="px-4">
+                        <Card className="px-4 py-2 mb-4 border-0 shadow">
                             <Card.Body className="mb-4 p-4">
                                 <Card.Title className="display-5 text-center">
                                     <i className="fa fa-music"></i>&nbsp;Search for a song
@@ -54,7 +54,7 @@ class Search extends Component {
                                         onChange={this.onChange}
                                     />
                                 </Form.Group>
-                                <Button variant="primary" type="submit" className="btn-sm mb-3 btn-block">
+                                <Button variant="info" type="submit" className="btn-sm mb-3 float-right">
                                 <i className="fa fa-search"></i>
                                 &nbsp;
                                     Get Track Lyrics
