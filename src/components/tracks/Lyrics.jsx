@@ -19,8 +19,6 @@ class Lyrics extends Component {
                 this.setState({ lyrics: res.data.message.body.lyrics });
                 return axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${this.props.match.params.id}&apikey=${process.env.REACT_APP_MM_KEY}`)
             })
-            // .then(res => {
-            //     console.log( res.data.message.body.track);
             .then(res => {
                 this.setState({ track: res.data.message.body.track });
             })
@@ -30,12 +28,12 @@ class Lyrics extends Component {
     render() {
         const { track, lyrics } = this.state;
         return (track === undefined || lyrics === undefined || Object.keys(track).length === 0 || Object.keys(lyrics).length === 0) ? <Spinner />
-            : <>
+            : <div className="mb-4">
                 <Link to="/" className="btn btn-info btn-sm mb-4">
-                    <i className="fa fa-chevron-left"></i>&nbsp;Go back
+                    <i className="fa fa-chevron-left" />&nbsp;Go back
                 </Link>
                 <Card>
-                    <Card.Header>{track.track_name} by{' '}<span className="text-secondary">{track.artist_name}</span></Card.Header>
+                    <Card.Header className="bg-transparent h5">{track.track_name} by{' '}<span className="text-secondary">{track.artist_name}</span></Card.Header>
                     <Card.Body>
                         <Card.Text>{lyrics.lyrics_body}</Card.Text>
                     </Card.Body>
@@ -54,7 +52,7 @@ class Lyrics extends Component {
                         </ListGroup.Item>
                     </ListGroup>
                 </Card>
-            </>
+            </div>
     }
 }
 

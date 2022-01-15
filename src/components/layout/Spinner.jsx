@@ -1,10 +1,8 @@
 import React from 'react';
 import { Container, Spinner } from 'react-bootstrap';
 
-export default () => {
-    return (
-        <Container className="d-flex h-100 justify-content-center">
-            <Spinner animation="grow" variant="primary"/>
-        </Container>
-    )
-};
+export default () => (
+    <Container className="d-flex h-100 justify-content-center align-items-center" style={{minHeight: "50vh"}}>
+        <Spinner animation="grow" variant="primary"/>
+    </Container>
+);

@@ -25,8 +25,10 @@ export class Provider extends Component {
     componentDidMount() {
         axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`, {
             headers: {
-                Authorization: "Access-Control-Allow-Headers",
-                'Content-Type': 'application/json'
+                "Authorization": "Access-Control-Allow-Headers",
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*",
+                'mode':'no-cors'
             }
         })
             .then(res => {

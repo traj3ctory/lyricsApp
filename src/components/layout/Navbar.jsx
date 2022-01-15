@@ -3,7 +3,7 @@ import { Navbar } from "react-bootstrap";
 
 const Header = () => {
   useEffect(() => {
-    window.addEventListener("scroll", function (e) {
+    window.addEventListener("scroll", (e) => {
       const navs = document.querySelector("#navs");
       if (
         document.documentElement.scrollTop ||
@@ -22,12 +22,11 @@ const Header = () => {
       id="navs"
       collapseOnSelect
       expand="lg"
-      //   bg="transparent"
       variant="dark"
       className="shadow fixed-top"
     >
       <Navbar.Brand href="#home" className="navbar-brand mb-0 h1 mx-auto font-weight-bold font-italic">
-        LyricsFinder
+        LeerixFinder
       </Navbar.Brand>
     </Navbar>
   );
